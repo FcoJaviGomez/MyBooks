@@ -19,6 +19,8 @@
 
 .footer_button{
     font-size: 40px;
+    /* text-decoration: none; */
+    color: black;
 }
 
 .footer_text{
