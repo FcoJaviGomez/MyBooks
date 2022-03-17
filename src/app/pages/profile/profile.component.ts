@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
   public miUser: User
 
   constructor() {
+
     this.miUser = new User(1, "Pepe", "Turbo", "pepeturbo@gmail.com", "urllll", "12345")
 
   }

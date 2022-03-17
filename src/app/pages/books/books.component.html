@@ -1,0 +1,71 @@
+<body class="body">
+    <div class="add">
+        <div class="body_div_add">
+            <div class="body_div_text_add">BOOK</div>
+            <div class="body_div1_add">
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Title</span>
+                    <input type="text" #input1 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">BookType</span>
+                    <input type="text" #input2 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Author</span>
+                    <input type="text" #input3 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Price</span>
+                    <input type="text" #input4 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Photo</span>
+                    <input type="text" #input5 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Ref Book</span>
+                    <input type="text" #input6 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <button on-click=enviar(input1,input2,input3,input4,input5,input6) type="button"
+                    class="btn btn-primary btn-lg">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div *ngFor="let book of miBooks;let impar = odd ;let par = even">
+            <div class="body_div" style="background-image: url({{book.photo}});">
+
+                <div class="body_div1">
+                    <div class="body_div_type"> {{book.bookType}} </div>
+                    <div class="body_div_title"> {{book.title}} </div>
+                    <div class="body_div_autor_ref_€">
+                        <div>
+                            <div>Author: {{book.author}} </div>
+                            <div> {{book.id_book | refBook}} </div>
+                        </div>
+                        <div>
+                            <div class="body_div_€">€
+                                <div class="body_div_€1"> {{book.price}} €</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div [ngClass]="{body_div_buy1:par, body_div_buy:impar} "> Buy </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="miBooks.length === 0">
+        No hay libros
+    </div>
+
+
+</body>

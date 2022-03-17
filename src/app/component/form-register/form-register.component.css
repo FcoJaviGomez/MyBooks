@@ -1,5 +1,6 @@
 .body{
-    height: 545px;
+    /* height: 545px; */
+    min-height: 75vh;
     display: flex;
     flex-direction: row;
     justify-content: center;

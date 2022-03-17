@@ -5,12 +5,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    height: 550px;
+    min-height: 75vh;
 }
 
 .body_div{
     background-color: rgba(0, 0, 0, 0.507);
-    height: 550px;
+    min-height: 75vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
