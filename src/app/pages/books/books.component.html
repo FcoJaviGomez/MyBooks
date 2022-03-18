@@ -1,7 +1,7 @@
 <body class="body">
     <div class="add">
         <div class="body_div_add">
-            <div class="body_div_text_add">BOOK</div>
+            <div class="body_div_text_add">Add BOOK</div>
             <div class="body_div1_add">
                 <div class="input-group flex-nowrap ">
                     <span class="input-group-text tamaño" id="addon-wrapping">Title</span>
@@ -33,17 +33,63 @@
                     <input type="text" #input6 class="form-control input2" placeholder="" aria-label="Username"
                         aria-describedby="addon-wrapping">
                 </div>
-                <button on-click=enviar(input1,input2,input3,input4,input5,input6) type="button"
+                <button on-click=add(input1,input2,input3,input4,input5,input6) type="button"
                     class="btn btn-primary btn-lg">Add</button>
             </div>
         </div>
+        <div class="body_div_add">
+            <div class="body_div_text_add">Modify BOOK</div>
+            <div class="body_div1_add">
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Title</span>
+                    <input type="text" #inputt1 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">BookType</span>
+                    <input type="text" #inputt2 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Author</span>
+                    <input type="text" #inputt3 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Price</span>
+                    <input type="text" #inputt4 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Photo</span>
+                    <input type="text" #inputt5 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap ">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Ref Book</span>
+                    <input type="text" #inputt6 class="form-control input2" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <button on-click=modify(inputt1,inputt2,inputt3,inputt4,inputt5,inputt6) type="button"
+                    class="btn btn-primary btn-lg">Modify</button>
+            </div>
+        </div>
     </div>
-
+    <div class="search">
+        <div class="input-group flex-nowrap ">
+            <span class="input-group-text tamaño" id="addon-wrapping">Ref Book</span>
+            <input type="text" #search class="form-control input2" placeholder="" aria-label="Username"
+                aria-describedby="addon-wrapping">
+            <button on-click="get(search)" class="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
     <div class="cards">
-        <div *ngFor="let book of miBooks;let impar = odd ;let par = even">
+        <div *ngFor="let book of miBooks;let impar = odd ;let par = even; let i = index">
             <div class="body_div" style="background-image: url({{book.photo}});">
 
                 <div class="body_div1">
+                    <button on-click="delete(book.id_book)" class="button1" type="reset"><i
+                            class="fa-solid fa-xmark"></i></button>
                     <div class="body_div_type"> {{book.bookType}} </div>
                     <div class="body_div_title"> {{book.title}} </div>
                     <div class="body_div_autor_ref_€">
