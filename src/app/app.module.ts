@@ -11,6 +11,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
 import { RefBookPipe } from './pipes/ref-book.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './shared/user.service';
+import { FormLoginComponent } from './component/form-login/form-login.component';
 
 
 @NgModule({
@@ -24,11 +27,13 @@ import { RefBookPipe } from './pipes/ref-book.pipe';
     ProfileComponent,
     BooksComponent,
     RefBookPipe,
+    FormLoginComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

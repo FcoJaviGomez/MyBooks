@@ -1,0 +1,19 @@
+<body class="body">
+    <div class="body_div">
+        <div class="body_div1">
+
+            <div class="input-group flex-nowrap ">
+                <span class="input-group-text tamaño" id="addon-wrapping">Email</span>
+                <input type="text" #input1 class="form-control input2" placeholder="" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap ">
+                <span class="input-group-text tamaño" id="addon-wrapping">Password </span>
+                <input type="text" #input2 class="form-control input2" placeholder="" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+
+            <button on-click="login(input1,input2)" type="button" class="btn btn-primary btn-lg">Login</button>
+        </div>
+    </div>
+</body>

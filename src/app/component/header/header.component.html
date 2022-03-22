@@ -4,9 +4,15 @@
         <div>HouseBook</div>
     </div>
     <div class="header_link">
-        <a class="header_link_a" routerLink="/">Home</a>
-        <a class="header_link_a" routerLink="/register">Register</a>
-        <a class="header_link_a" routerLink="/profile">Profile</a>
-        <a class="header_link_a" routerLink="/books">Books</a>
+        <a *ngIf="!miUserService.logged" class="header_link_a" routerLink="/">Home</a>
+        <a *ngIf="!miUserService.logged" class="header_link_a" routerLink="/login">Login</a>
+        <a *ngIf="!miUserService.logged" class="header_link_a" routerLink="/register">Register</a>
+        <a *ngIf="miUserService.logged" class="header_link_a" routerLink="/books">Books</a>
+        <a *ngIf="miUserService.logged" class="header_link_a" routerLink="/profile">Profile</a>
     </div>
+    <!-- <div #esFalso class="header_link">
+        <ng-template #true>
+           
+        </ng-template>
+    </div> -->
 </header>
