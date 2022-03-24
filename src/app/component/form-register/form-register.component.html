@@ -1,38 +1,64 @@
-<body class="body">
-    <div class="body_div">
-        <div class="body_div1">
-            <div class="input-group flex-nowrap ">
-                <span class="input-group-text tamaño" id="addon-wrapping">Name</span>
-                <input type="text" #input1 class="form-control input2" placeholder="" aria-label="Username"
-                    aria-describedby="addon-wrapping">
+<form #userForm="ngForm" (ngSubmit)="register()">
+
+    <body class="body">
+        <div class="body_div">
+            <div class="body_div1">
+                <div class="input-group">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Name</span>
+                    <input type="text" name="name" class="form-control input2" [(ngModel)]="user.name" required
+                        placeholder="" aria-label="Username" aria-describedby="addon-wrapping" #name="ngModel"
+                        [ngClass]="{'is-invalid': (name.dirty || name.touched) && name.invalid}">
+                    <div class="invalid-feedback " *ngIf="(name.dirty || name.touched) && name.invalid">
+                        <p *ngIf="name.errors.required">Nombre Obligatorio</p>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Last name</span>
+                    <input type="text" name="lastName" class="form-control input2" [(ngModel)]="user.lastName" required
+                        placeholder="" aria-label="Username" aria-describedby="addon-wrapping" #lastName="ngModel"
+                        [ngClass]="{'is-invalid': (lastName.dirty || lastName.touched) && lastName.invalid}">
+                    <div class="invalid-feedback " *ngIf="(lastName.dirty || lastName.touched) && lastName.invalid">
+                        <p *ngIf="lastName.errors.required">Apellido Obligatorio</p>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Email</span>
+                    <input type="text" name="email" class="form-control input2" [(ngModel)]="user.email" required
+                        placeholder="" aria-label="Username" aria-describedby="addon-wrapping" #email="ngModel"
+                        [ngClass]="{'is-invalid': (email.dirty || email.touched) && email.invalid}">
+                    <div class="invalid-feedback " *ngIf="(email.dirty || email.touched) && email.invalid">
+                        <p *ngIf="email.errors.required">Email Obligatorio</p>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Password</span>
+                    <input type="text" name="password" class="form-control input2" [(ngModel)]="user.password" required
+                        placeholder="" aria-label="Username" aria-describedby="addon-wrapping" #password="ngModel"
+                        [ngClass]="{'is-invalid': (password.dirty || password.touched) && password.invalid}">
+                    <div class="invalid-feedback " *ngIf="(password.dirty || password.touched) && password.invalid">
+                        <p *ngIf="password.errors.required">Contraseña Obligatoria</p>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Repeat Password </span>
+                    <input type="text" name="password1" class="form-control input2" [(ngModel)]="password1" required
+                        placeholder="" aria-label="Username" aria-describedby="addon-wrapping" #passwordd="ngModel"
+                        [ngClass]="{'is-invalid': (passwordd.dirty || passwordd.touched) && passwordd.invalid}">
+                    <div class="invalid-feedback " *ngIf="(passwordd.dirty || passwordd.touched) && passwordd.invalid">
+                        <p *ngIf="password.errors.required">Contraseña Obligatoria</p>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text tamaño" id="addon-wrapping">Url </span>
+                    <input type="text" name="url" class="form-control input2" [(ngModel)]="user.url" required
+                        placeholder="" aria-label="Username" aria-describedby="addon-wrapping" #url="ngModel"
+                        [ngClass]="{'is-invalid': (url.dirty || url.touched) && url.invalid}">
+                    <div class="invalid-feedback " *ngIf="(url.dirty || url.touched) && url.invalid">
+                        <p *ngIf="url.errors.required">Url Obligatorio</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg" [disabled]="userForm.invalid">Register</button>
             </div>
-            <div class="input-group flex-nowrap ">
-                <span class="input-group-text tamaño" id="addon-wrapping">Last name</span>
-                <input type="text" #input2 class="form-control input2" placeholder="" aria-label="Username"
-                    aria-describedby="addon-wrapping">
-            </div>
-            <div class="input-group flex-nowrap ">
-                <span class="input-group-text tamaño" id="addon-wrapping">Email</span>
-                <input type="text" #input3 class="form-control input2" placeholder="" aria-label="Username"
-                    aria-describedby="addon-wrapping">
-            </div>
-            <div class="input-group flex-nowrap ">
-                <span class="input-group-text tamaño" id="addon-wrapping">Password</span>
-                <input type="text" #input4 class="form-control input2" placeholder="" aria-label="Username"
-                    aria-describedby="addon-wrapping">
-            </div>
-            <div class="input-group flex-nowrap ">
-                <span class="input-group-text tamaño" id="addon-wrapping">Repeat Password </span>
-                <input type="text" #input5 class="form-control input2" placeholder="" aria-label="Username"
-                    aria-describedby="addon-wrapping">
-            </div>
-            <div class="input-group flex-nowrap ">
-                <span class="input-group-text tamaño" id="addon-wrapping">Url </span>
-                <input type="text" #input6 class="form-control input2" placeholder="" aria-label="Username"
-                    aria-describedby="addon-wrapping">
-            </div>
-            <button on-click="register(input1,input2,input3,input4,input5,input6)" type="button"
-                class="btn btn-primary btn-lg">Register</button>
         </div>
-    </div>
-</body>
+    </body>
+</form>

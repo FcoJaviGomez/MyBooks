@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, enableProdMode, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
@@ -11,11 +12,21 @@ import { UserService } from 'src/app/shared/user.service';
 export class FormLoginComponent implements OnInit {
 
   public prueba: string
+  public user: User
 
-  constructor(public router: Router, private miUserService: UserService) { }
+  constructor(public router: Router, private miUserService: UserService) {
 
-  login(newEmail: HTMLInputElement, newPassword: HTMLInputElement) {
-    let user = new User(null, null, newEmail.value, null, newPassword.value)
+    this.user = new User("", "", "", "", "")
+  }
+
+  login() {
+    console.log(this.miUserService.user);
+
+    // console.log(form.value);
+
+    console.log(this.user);
+
+    let user = new User(null, null, this.user.email, null, this.user.password)
 
     if (this.validar(user)) {
 
@@ -35,15 +46,10 @@ export class FormLoginComponent implements OnInit {
           console.log(this.miUserService.user)
         }
       })
-
-
     }
     else {
       console.log("Faltan campos por rellenar");
-
     }
-
-
   }
 
   validar(user: User) {

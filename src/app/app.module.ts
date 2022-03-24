@@ -14,6 +14,7 @@ import { RefBookPipe } from './pipes/ref-book.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './shared/user.service';
 import { FormLoginComponent } from './component/form-login/form-login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { FormLoginComponent } from './component/form-login/form-login.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
