@@ -1,0 +1,28 @@
+<!-- <h1>{{bookDad.title}}</h1> -->
+<!-- *ngFor="let impar = odd ;let par = even; let i = index" -->
+<div>
+    <div class="body_div" style="background-image: url({{bookDad.photo}});">
+
+        <div class="body_div1">
+
+            <button class="button1" on-click="delete(bookDad.id_book)" type="reset"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="body_div_type"> {{bookDad.bookType}} </div>
+            <div class="body_div_title"> {{bookDad.title}} </div>
+            <div class="body_div_autor_ref_€">
+                <div>
+                    <div>Author: {{bookDad.author}} </div>
+                    <div> {{bookDad.id_book | refBook}} </div>
+                </div>
+                <div>
+                    <div class="body_div_€">€
+                        <div class="body_div_€1"> {{bookDad.price}} €</div>
+                    </div>
+                </div>
+            </div>
+            <div [ngClass]="{body_div_buy1:parDad, body_div_buy:imparDad}"> Buy </div>
+
+
+        </div>
+    </div>
+</div>

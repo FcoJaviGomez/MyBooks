@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './shared/user.service';
 import { FormLoginComponent } from './component/form-login/form-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardComponent } from './component/card/card.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BooksComponent,
     RefBookPipe,
     FormLoginComponent,
+    CardComponent,
 
   ],
   imports: [

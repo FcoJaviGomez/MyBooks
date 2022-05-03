@@ -21,7 +21,7 @@
                     <span class="input-group-text tamaño" id="addon-wrapping">Password </span>
                     <input type="password" name="password" class="form-control input2" [(ngModel)]="user.password"
                         placeholder="" aria-label="Username" aria-describedby="addon-wrapping" #password="ngModel"
-                        [ngClass]="{'is-invalid': (email.dirty || email.touched) && email.invalid}" required>
+                        [ngClass]="{'is-invalid': (password.dirty || password.touched) && password.invalid}" required>
 
                     <div class="invalid-feedback " *ngIf="(password.dirty || password.touched) && password.invalid">
                         <p *ngIf="password.errors.required">Password Obligatorio</p>

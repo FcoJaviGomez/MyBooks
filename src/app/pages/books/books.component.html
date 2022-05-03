@@ -84,28 +84,9 @@
         </div>
     </div>
     <div class="cards">
-        <div *ngFor="let book of miBooks;let impar = odd ;let par = even; let i = index">
-            <div class="body_div" style="background-image: url({{book.photo}});">
+        <div *ngFor="let book of miBooks; let impar = odd ;let par = even">
 
-                <div class="body_div1">
-                    <button on-click="delete(book.id_book)" class="button1" type="reset"><i
-                            class="fa-solid fa-xmark"></i></button>
-                    <div class="body_div_type"> {{book.bookType}} </div>
-                    <div class="body_div_title"> {{book.title}} </div>
-                    <div class="body_div_autor_ref_€">
-                        <div>
-                            <div>Author: {{book.author}} </div>
-                            <div> {{book.id_book | refBook}} </div>
-                        </div>
-                        <div>
-                            <div class="body_div_€">€
-                                <div class="body_div_€1"> {{book.price}} €</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div [ngClass]="{body_div_buy1:par, body_div_buy:impar} "> Buy </div>
-                </div>
-            </div>
+            <app-card [bookDad]="book" [imparDad]="impar" [parDad]="par" (eventBook)="deleteHijo($event) "></app-card>
         </div>
     </div>
 

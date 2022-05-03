@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
-import { User } from 'src/app/models/user';
+// import { User } from 'src/app/models/user';
 import { ServiceBookService } from 'src/app/shared/service-book.service';
 import { UserService } from 'src/app/shared/user.service';
 
@@ -12,7 +12,8 @@ import { UserService } from 'src/app/shared/user.service';
 export class BooksComponent implements OnInit {
 
   public miBooks: Book[]
-  public user: User
+  // public user: User
+
 
   constructor(public miBooksService: ServiceBookService, private miUserService: UserService) {
 
@@ -93,7 +94,9 @@ export class BooksComponent implements OnInit {
     }
   }
 
-  delete(id_book: number) {
+  deleteHijo(id_book: number) {
+    console.log("evento ruben" + id_book);
+
     this.miBooksService.delete(id_book).subscribe((data1: any) => {
       for (let i = 0; i < this.miBooks.length; i++) {
         if (this.miBooks[i].id_book === id_book) {
