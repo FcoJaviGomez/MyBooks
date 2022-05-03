@@ -17,7 +17,7 @@ export class BooksComponent implements OnInit {
 
   constructor(public miBooksService: ServiceBookService, private miUserService: UserService) {
 
-    this.miBooksService.getAll(this.miUserService.user.id_user).subscribe((data1: Book[]) => {
+    this.miBooksService.getAll(this.miUserService.user.id_user_book).subscribe((data1: Book[]) => {
       console.log(data1)
       this.miBooks = data1
     })
@@ -26,7 +26,7 @@ export class BooksComponent implements OnInit {
 
   get(newId_book: HTMLInputElement) {
     if (newId_book.value === "") {
-      this.miBooksService.getAll(this.miUserService.user.id_user).subscribe((data1: Book[]) => {
+      this.miBooksService.getAll(this.miUserService.user.id_user_book).subscribe((data1: Book[]) => {
         console.log(data1)
         this.miBooks = data1
         console.log(this.miBooks)
@@ -34,7 +34,7 @@ export class BooksComponent implements OnInit {
 
     }
     else {
-      this.miBooksService.getOne(this.miUserService.user.id_user, Number(newId_book.value)).subscribe((data1: Book[]) => {
+      this.miBooksService.getOne(this.miUserService.user.id_user_book, Number(newId_book.value)).subscribe((data1: Book[]) => {
         console.log(data1)
         this.miBooks = data1
         console.log(this.miBooks)
@@ -47,7 +47,7 @@ export class BooksComponent implements OnInit {
     newPrice: HTMLInputElement, newPhoto: HTMLInputElement) {
 
     let book = new Book(newTitle.value, newBookType.value, newAuthor.value,
-      Number(newPrice.value), newPhoto.value, null, this.miUserService.user.id_user)
+      Number(newPrice.value), newPhoto.value, null, this.miUserService.user.id_user_book)
 
     if (this.validar(book)) {
       console.log("se ha creado correctamente")
@@ -72,7 +72,7 @@ export class BooksComponent implements OnInit {
     newPrice: HTMLInputElement, newPhoto: HTMLInputElement, newId_book: HTMLInputElement) {
 
     let book = new Book(newTitle.value, newBookType.value, newAuthor.value,
-      Number(newPrice.value), newPhoto.value, Number(newId_book.value), this.miUserService.user.id_user)
+      Number(newPrice.value), newPhoto.value, Number(newId_book.value), this.miUserService.user.id_user_book)
     if (this.validar(book)) {
       this.miBooksService.edit(book).subscribe((data: any) => {
         console.log(data);
