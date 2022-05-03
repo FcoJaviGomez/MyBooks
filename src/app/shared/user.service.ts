@@ -10,7 +10,7 @@ export class UserService {
 
   // private url = "http://localhost:3000"
 
-  private url: string = "https://house-book.herokuapp.com"
+  private url: string = "https://api-house-book.herokuapp.com"
 
   public logged: boolean
 

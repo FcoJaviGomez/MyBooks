@@ -9,7 +9,7 @@ import { Book } from '../models/book';
 export class ServiceBookService {
   // private url: string = "http://localhost:3000"
 
-  private url: string = "https://house-book.herokuapp.com"
+  private url: string = "https://api-house-book.herokuapp.com"
 
   public book: Book
 
