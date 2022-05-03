@@ -7,7 +7,9 @@ import { Book } from '../models/book';
   providedIn: 'root'
 })
 export class ServiceBookService {
-  private url: string = "http://localhost:3000"
+  // private url: string = "http://localhost:3000"
+
+  private url: string = "https://house-book.herokuapp.com"
 
   public book: Book
 
@@ -15,13 +17,13 @@ export class ServiceBookService {
 
   }
 
-  getAll(id_user: number): Observable<Object> {
-    return this.http.get(this.url + "/books?id_user=" + id_user)
+  getAll(id_user_book: number): Observable<Object> {
+    return this.http.get(this.url + "/books?id_user_book=" + id_user_book)
   }
 
-  getOne(id_user: number, id_book: number): Observable<Object> {
+  getOne(id_user_book: number, id_book: number): Observable<Object> {
 
-    return this.http.get(this.url + `/books?id_user= ${id_user}&id_book= ${id_book} `)
+    return this.http.get(this.url + `/books?id_user_book= ${id_user_book}&id_book= ${id_book} `)
   }
 
   add(book: Book): Observable<Object> {

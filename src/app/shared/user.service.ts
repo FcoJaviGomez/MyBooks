@@ -8,7 +8,9 @@ import { User } from '../models/user';
 })
 export class UserService {
 
-  private url = "http://localhost:3000"
+  // private url = "http://localhost:3000"
+
+  private url: string = "https://house-book.herokuapp.com"
 
   public logged: boolean
 
